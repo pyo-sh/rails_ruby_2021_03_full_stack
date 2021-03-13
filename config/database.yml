@@ -8,10 +8,13 @@ default: &default
   adapter: sqlite3
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+  username: root
+  password: 12345
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: db/development_database
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,4 +25,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: db/production_database

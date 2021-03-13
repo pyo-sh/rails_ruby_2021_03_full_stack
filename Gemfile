@@ -3,10 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'rexml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+# Make sure that `gem install mysql2 -v '0.5.3' --source 'https://rubygems.org/'`
+# gem 'mysql2', '~> 0.3.21'
+# gem 'mysql2', '~> 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
