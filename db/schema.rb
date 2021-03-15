@@ -10,12 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_063107) do
+ActiveRecord::Schema.define(version: 2021_03_15_005224) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "memo_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "memos", force: :cascade do |t|
     t.integer "memoid"
     t.string "title"
     t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "question_translations", force: :cascade do |t|
+    t.integer "question_id"
+    t.string "lang"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "content"
+    t.integer "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_settings", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "lang"
+    t.boolean "is_reminder_on"
+    t.boolean "is_public"
+    t.integer "alarm_time_int"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
