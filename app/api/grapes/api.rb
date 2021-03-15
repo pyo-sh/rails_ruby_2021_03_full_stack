@@ -6,6 +6,6 @@ module Grapes
 
         mount Grapes::V1::MemoAPI
         mount Grapes::V1::UserAPI
-        # mount Grapes::V1::UserSettingApi
+        mount Grapes::V1::UserSettingAPI
     end
 end
