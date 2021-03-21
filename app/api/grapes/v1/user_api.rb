@@ -33,7 +33,7 @@ module Grapes
                     # 유저가 있을 때
                     if user
                         # 비밀번호를 확인해서 부여
-                        if user.valid_password?(param[:password])
+                        if user.valid_password?(params[:password])
                             jwt_token = User.create_jwt_token(user.id)
                             # 돌려주는 형식은 front - back 사이에 협의되어야 할 일
                             return {
